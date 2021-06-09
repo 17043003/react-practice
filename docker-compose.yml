@@ -10,4 +10,4 @@ services:
     volumes:
       - ./src:/src
     working_dir: "/src"
-    # command: yarn start
+    command: yarn start
