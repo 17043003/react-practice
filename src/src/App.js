@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function App() {
   const profiles = [
     { name: 'tama', age: 3 },
     { name: 'pikachu', age: 5 },
-    { name: 'pichu' }
+    { name: 'pichu', age: 1  }
   ];
 
   return (
@@ -22,18 +23,10 @@ function App() {
 const Cat = (props) => {
   return <div>nya! I am {props.name}, and {props.age} years old.</div>
 }
-// default props
-Cat.defaultProps = {
-  age: 0
-}
 
-// class component
-class Dog extends Component{
-  render(){
-    return (
-      <h2>bow!</h2>
-    )
-  }
+Cat.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number.isRequired
 }
 
 export default App;
