@@ -1,22 +1,30 @@
 import React, {Component} from 'react';
 
 function App() {
-  const label = <label htmlFor="bar">bar</label>
-  const indom = <input type="text" onChange={() => {console.log("changed!")}} />
-  
+  const profiles = [
+    { name: 'tama', age: 3 },
+    { name: 'pikachu', age: 5 },
+    { name: 'pichu' }
+  ];
+
   return (
     <React.Fragment>
-      {label}
-      {indom}
-      <Cat/>
-      <Dog/>
+    {
+      profiles.map((profile, index) => {
+        return <Cat name={profile.name} age={profile.age} key={index}/>
+      })
+    }
     </React.Fragment>
   );
 }
 
 // functional component
-const Cat = () => {
-  return <div>nya!</div>
+const Cat = (props) => {
+  return <div>nya! I am {props.name}, and {props.age} years old.</div>
+}
+// default props
+Cat.defaultProps = {
+  age: 0
 }
 
 // class component
