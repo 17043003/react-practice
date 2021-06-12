@@ -1,8 +1,14 @@
+import React from 'react';
+
 function App() {
+  const label = <label htmlFor="bar">bar</label>
+  const indom = <input type="text" onChange={() => {console.log("changed!")}} />
+  
   return (
-    <div className="App">
-      <h1>Hello, world!</h1>
-    </div>
+    <React.Fragment>
+      {label}
+      {indom}
+    </React.Fragment>
   );
 }
 
