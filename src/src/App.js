@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 function App() {
   const label = <label htmlFor="bar">bar</label>
@@ -8,8 +8,24 @@ function App() {
     <React.Fragment>
       {label}
       {indom}
+      <Cat/>
+      <Dog/>
     </React.Fragment>
   );
+}
+
+// functional component
+const Cat = () => {
+  return <div>nya!</div>
+}
+
+// class component
+class Dog extends Component{
+  render(){
+    return (
+      <h2>bow!</h2>
+    )
+  }
 }
 
 export default App;
